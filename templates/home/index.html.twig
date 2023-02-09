@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }}{% endblock %}
+
+{% block body %}
+
+    <section class="titre">
+        <h1>Votre parcours de jeu</h1>
+    </section>
+
+    <p>
+        Vous avez joué <b>{{ nbGrilles }} grilles</b> depuis la création du loto.
+    </p>
+
+    <p>
+        Vous avez joué <b>{{ nbGrillesEnCoursUser }} grilles</b> qui sont en attente d'un tirage.
+    </p>
+
+    <p>
+        Le montant du prochain tirage est de <b>{{ argentEnJeu }} € </b>à se répartir entre les
+        différents rangs.
+    </p>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <section class="titre">
+        <h1 class="h3 mb-3 font-weight-normal">Tirage</h1>
+    </section>
+
+    <ul style="list-style: none; text-align: left">
+        <li>Numéro 1 : {{ tirage.numero1 }}</li>
+        <li>Numéro 2 : {{ tirage.numero2 }}</li>
+        <li>Numéro 3 : {{ tirage.numero3 }}</li>
+        <li>Numéro 4 : {{ tirage.numero4 }}</li>
+        <li>Numéro 5 : {{ tirage.numero5 }}</li>
+        <br>
+        <li>Numéro Chance : {{ tirage.numeroChance }}</li>
+        <br>
+        <li>Jackpot : {{ tirage.jackpot }} €</li>
+    </ul>
+{% endblock %}
+
+{% block title %}
+    {{ parent() }} - Tirage
+{% endblock %}
+

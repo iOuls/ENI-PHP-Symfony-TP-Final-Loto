@@ -1,0 +1,50 @@
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+form > input {
+    padding: .5em;
+}
+
+body {
+    font-family: sans-serif;
+    color: darkblue;
+}
+
+header, body {
+    text-align: center;
+}
+
+button, .btn {
+    border-radius: 5px;
+    border: 2px solid rgba(0, 0, 0, .15);
+    padding: .5em 3em;
+    margin: 1em;
+}
+
+.titre {
+    width: 100%;
+    color: deepskyblue;
+    border: 2px solid darkblue;
+    border-left: none;
+    border-right: none;
+    margin: 2em 0;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, .10);
+}
+
+.logo {
+    width: 100px;
+}
+
+.histoire {
+    font-weight: bold;
+}
+
+.liste-erreurs {
+    color: indianred;
+    margin: 0;
+    padding: 0;
+}

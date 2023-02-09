@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - Jouer une grille{% endblock %}
+
+{% block body %}
+
+    {{ form_start(grilleForm) }}
+    <section class="titre">
+        <h1>Remplir une grille</h1>
+    </section>
+
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alter-{{ label }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+    <div class="liste-erreurs">
+        {{ form_errors(grilleForm.numero1) }}
+        {{ form_errors(grilleForm.numero2) }}
+        {{ form_errors(grilleForm.numero3) }}
+        {{ form_errors(grilleForm.numero4) }}
+        {{ form_errors(grilleForm.numero5) }}
+        {{ form_errors(grilleForm.numeroChance) }}
+    </div>
+
+    <br>
+    {{ form_label(grilleForm.numero1, ' # 1') }}
+    {{ form_widget(grilleForm.numero1) }}<br>
+
+    {{ form_label(grilleForm.numero2, ' # 2') }}
+    {{ form_widget(grilleForm.numero2) }}<br>
+
+    {{ form_label(grilleForm.numero3, ' # 3') }}
+    {{ form_widget(grilleForm.numero3) }}<br>
+
+    {{ form_label(grilleForm.numero4, ' # 4') }}
+    {{ form_widget(grilleForm.numero4) }}<br>
+
+    {{ form_label(grilleForm.numero5, ' # 5') }}
+    {{ form_widget(grilleForm.numero5) }}<br>
+
+    {{ form_label(grilleForm.numeroChance, ' # Chance') }}
+    {{ form_widget(grilleForm.numeroChance) }}<br>
+
+    <button type="submit" class="btn">Jouer</button>
+
+    {{ form_end(grilleForm) }}
+
+{% endblock %}

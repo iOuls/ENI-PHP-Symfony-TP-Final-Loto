@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}FDJ{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{{ asset('media/favicon-32x32.png') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+</head>
+<body>
+<header>
+    <a href="{{ path('home_index') }}">
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/8/87/LOGO_FDJ.png"
+             alt="Logo Française Des Jeux">
+        <br>
+    </a>
+    <a href="{{ path('home_index') }}">Accueil</a> |
+    <a href="{{ path('jouer_grille') }}">Jouer</a> |
+
+    {% if app.user %}
+        <a href="{{ path('app_logout') }}">Se déconnecter</a>
+        <p>
+            Vous êtes authentifié en tant que <b>{{ app.user.userIdentifier }}</b>, <a
+                    href="{{ path('app_logout') }}">se déconnecter</a>.</p>
+    {% else %}
+        <a href="{{ path('app_register') }}">S'enregistrer</a> |
+        <a href="{{ path('app_login') }}">Se connecter</a>
+
+    {% endif %}
+</header>
+
+<main>
+    {% block body %}
+    {% endblock %}
+</main>
+
+<footer>
+
+</footer>
+</body>
+</html>
